@@ -20,7 +20,7 @@ union BookType_t
     Fiction fiction;
     NonFiction nonFiction;
 };
-typedef struct BookType_t BookType;
+typedef union BookType_t BookType;
 
 struct Book_t
 {
