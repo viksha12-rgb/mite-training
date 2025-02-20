@@ -29,7 +29,7 @@ void readEmployees(Employee emp[],int n)
 {
    printf("Enter the details(ID,Name,salary,Department):\n");
    for(int i=0;i<n;i++){
-     scanf("%d%s%f%d",&emp[i].id,&emp[i].name,&emp[i].salary,&emp[i].department);  
+     scanf("%d%s%f%s",&emp[i].id,emp[i].name,&emp[i].salary,emp[i].department);  
    }
 }
 void displayEmployees(Employee emp[],int n)
