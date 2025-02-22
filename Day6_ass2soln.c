@@ -9,12 +9,9 @@ typedef struct {
     int price;
 } Product;
 
-// Function to compare products for sorting (Ascending order of price)
 int compare(const void *a, const void *b) {
     return ((Product *)a)->price - ((Product *)b)->price;
 }
-
-// Linear search function to find product by name (fix for binary search issue)
 int search_product(Product products[], int n, char *name) {
     for (int i = 0; i < n; i++) {
         if (strcmp(products[i].name, name) == 0) {
@@ -23,8 +20,6 @@ int search_product(Product products[], int n, char *name) {
     }
     return -1;
 }
-
-// Function to display products
 void display_products(Product products[], int n) {
     printf("\nProduct List:\n");
     for (int i = 0; i < n; i++) {
@@ -47,18 +42,13 @@ int main() {
         printf("Enter Name and Price for product %d: ", i + 1);
         scanf("%s %d", products[i].name, &products[i].price);
     }
-
-    // Sorting products by price (Ascending)
     qsort(products, n, sizeof(Product), compare);
    
     printf("\nSorted Product List (by Price):\n");
     display_products(products, n);
-   
-    // Display cheapest and most expensive products
     printf("\nCheapest Product: %s (Price: %d)\n", products[0].name, products[0].price);
     printf("Most Expensive Product: %s (Price: %d)\n", products[n-1].name, products[n-1].price);
    
-    // Search for a product by name
     char search_name[50];
     printf("\nEnter Product Name to search: ");
     scanf("%s", search_name);
@@ -69,6 +59,5 @@ int main() {
     } else {
         printf("Product '%s' not found.\n", search_name);
     }
-   
     return 0;
 }
